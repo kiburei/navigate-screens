@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import DetailsScreen from './main/Details';
+import GridView from 'react-native-super-grid';
+import { bongzBlue } from './main/assets/colors';
 
 class HomeScreen extends Component {
   render() {
@@ -17,6 +19,16 @@ class HomeScreen extends Component {
             <Text>Active Card</Text>
             <Text>xxxx-2332</Text>
           </View>
+          <GridView
+            itemDimension={130}
+            items={items}
+            renderItem={item => (
+              <View style={styles.actions}>
+                <Text style={styles.actionHeader}>{item.name}</Text>
+                <Text>{item.info}</Text>
+              </View>
+            )}
+            />
         </View>
       </View>
     );
@@ -32,7 +44,7 @@ const items = [
 const styles = StyleSheet.create({
   banner: {
     padding: 10,
-    backgroundColor: '#3EC3D3',
+    backgroundColor: bongzBlue,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -52,6 +64,17 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 15,
     alignItems: 'center',
+  },
+  actionHeader: {
+    fontSize: 20,
+    color: bongzBlue,
+  },
+  actions: {
+    padding: 15,
+    borderStyle: 'solid',
+    borderWidth: 0.5,
+    borderRadius: 15,
+    textAlign: 'left',
   },
 
 });
