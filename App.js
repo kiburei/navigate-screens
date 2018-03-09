@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import DetailsScreen from './main/Details';
+import QrCode from './main/QrCode';
 import GridView from 'react-native-super-grid';
 import { bongzBlue } from './main/assets/colors';
+import AgentWithdraw from './main/AgentWithdraw';
+import AtmWithdraw from './main/AtmWithdraw';
+import ReceiveMoney from './main/ReceiveMoney';
+import SendMoney from './main/SendMoney';
+import ShopNo from './main/ShopNo';
 
 class HomeScreen extends Component {
   render() {
@@ -23,10 +28,12 @@ class HomeScreen extends Component {
             itemDimension={130}
             items={items}
             renderItem={item => (
-              <View style={styles.actions}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate(item.link)}
+                style={styles.actions}>
                 <Text style={styles.actionHeader}>{item.name}</Text>
                 <Text>{item.info}</Text>
-              </View>
+              </TouchableOpacity>
             )}
             />
         </View>
@@ -36,14 +43,14 @@ class HomeScreen extends Component {
 }
 
 const items = [
-  { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code' },{ name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number' },
-  { name: 'Withdraw from Agent', info: 'Withdraw soem money from a Bongz Agent' },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM' },
-  { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user' },{ name: 'Request Payment', info: 'Send QR code or number & request payment' },
+  { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code', link: 'QrCode' },{ name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number', link: 'ShopNo' },
+  { name: 'Withdraw from Agent', info: 'Withdraw soem money from a Bongz Agent', link: 'AgentWithdraw' },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw' },
+  { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user', link: 'SendMoney' },{ name: 'Request Payment', info: 'Send QR code or number & request payment', link: 'ReceiveMoney' },
 ];
 
 const styles = StyleSheet.create({
   banner: {
-    padding: 10,
+    padding: 15,
     backgroundColor: bongzBlue,
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,7 +64,7 @@ const styles = StyleSheet.create({
   },
   main: {
     flex: 9,
-    padding: 15,
+    padding: 10,
   },
   slider: {
     borderStyle: 'solid',
@@ -83,8 +90,23 @@ const RootStack = StackNavigator({
   Home: {
     screen: HomeScreen,
   },
-  Details: {
-    screen: DetailsScreen,
+  QrCode: {
+    screen: QrCode,
+  },
+  AgentWithdraw: {
+    screen: AgentWithdraw,
+  },
+  AtmWithdraw: {
+    screen: AtmWithdraw,
+  },
+  ReceiveMoney: {
+    screen: ReceiveMoney,
+  },
+  SendMoney: {
+    screen: SendMoney,
+  },
+  ShopNo: {
+    screen: ShopNo,
   },
 });
 
