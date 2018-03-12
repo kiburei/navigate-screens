@@ -9,6 +9,7 @@ import AtmWithdraw from './main/AtmWithdraw';
 import ReceiveMoney from './main/ReceiveMoney';
 import SendMoney from './main/SendMoney';
 import ShopNo from './main/ShopNo';
+import Footer from './main/assets/Footer';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -40,6 +41,7 @@ class HomeScreen extends Component {
             )}
             />
         </View>
+        <Footer />
       </View>
     );
   }
@@ -115,5 +117,6 @@ const RootStack = StackNavigator({
 export default class App extends Component {
   render() {
     return <RootStack />;
+
   }
 }
