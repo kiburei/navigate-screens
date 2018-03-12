@@ -11,6 +11,9 @@ import SendMoney from './main/SendMoney';
 import ShopNo from './main/ShopNo';
 
 class HomeScreen extends Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={{flex: 1}}>
@@ -81,7 +84,6 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 0.5,
     borderRadius: 15,
-    textAlign: 'left',
   },
 
 });

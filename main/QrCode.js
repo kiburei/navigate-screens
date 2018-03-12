@@ -3,6 +3,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import { bongzBlue } from './assets/colors';
 
 export default class QrCode extends Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={{flex: 1}}>
@@ -41,7 +44,6 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    fontSize: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
