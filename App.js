@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import QrCode from './main/QrCode';
 import GridView from 'react-native-super-grid';
 import { bongzBlue } from './main/assets/colors';
@@ -9,7 +9,11 @@ import AtmWithdraw from './main/AtmWithdraw';
 import ReceiveMoney from './main/ReceiveMoney';
 import SendMoney from './main/SendMoney';
 import ShopNo from './main/ShopNo';
-import Footer from './main/assets/Footer';
+import MessageScreen from './main/screens/MessageScreen';
+import CardScreen from './main/screens/CardScreen';
+import TransactScreen from './main/screens/TransactScreen';
+import StatementScreen from './main/screens/StatementScreen';
+import ProfileScreen from './main/screens/ProfileScreen';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -41,7 +45,6 @@ class HomeScreen extends Component {
             )}
             />
         </View>
-        <Footer />
       </View>
     );
   }
@@ -114,7 +117,37 @@ const RootStack = StackNavigator({
   },
 });
 
-export default class App extends Component {
+const MessageStack = StackNavigator({
+  Messages: { screen: MessageScreen },
+  Cards: { screen: CardScreen },
+});
+
+const CardStack = StackNavigator({
+  Transact: { screen: TransactScreen },
+  Messages: { screen: MessageScreen },
+});
+
+export default TabNavigator({
+  Messages: { screen: MessageScreen },
+  Cards: { screen: CardScreen },
+  Transact: { screen: TransactScreen },
+  Statements: { screen: StatementScreen },
+  Profile: { screen: ProfileScreen },
+},
+{
+    tabBarOptions: {
+    activeTintColor: bongzBlue,
+    inactiveTintColor: 'gray',
+  },
+  tabBarComponent: TabBarBottom,
+  tabBarPosition: 'bottom',
+  animationEnabled: false,
+  swipeEnabled: false,
+}
+);
+
+
+class App extends Component {
   render() {
     return <RootStack />;
 
