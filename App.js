@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import QrCode from './main/QrCode';
 import GridView from 'react-native-super-grid';
@@ -15,10 +15,20 @@ import TransactScreen from './main/screens/TransactScreen';
 import StatementScreen from './main/screens/StatementScreen';
 import ProfileScreen from './main/screens/ProfileScreen';
 
+var icon = [
+            {image:require('./main/assets/icons/qr.png')},
+            {image:require('./main/assets/icons/shop.png')},
+            {image:require('./main/assets/icons/agent.png')},
+            {image:require('./main/assets/icons/atm.png')},
+            {image:require('./main/assets/icons/send.png')},
+            {image:require('./main/assets/icons/request.png')},
+          ];
+
 class HomeScreen extends Component {
-  static navigationOptions = {
+ static navigationOptions = {
     header: null
   }
+
   render() {
     return (
       <View style={{flex: 1}}>
@@ -29,8 +39,11 @@ class HomeScreen extends Component {
         </View>
         <View style={styles.main}>
           <View style={styles.slider}>
+            <Image source={require('./main/assets/icons/cc.png')}
+              style={{height: 70, width: 120}}
+              />
             <Text>Active Card</Text>
-            <Text>xxxx-2332</Text>
+            <Text style={{fontSize: 8}}>xxxx-2332</Text>
           </View>
           <GridView
             itemDimension={130}
@@ -39,8 +52,18 @@ class HomeScreen extends Component {
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate(item.link)}
                 style={styles.actions}>
-                <Text style={styles.actionHeader}>{item.name}</Text>
-                <Text>{item.info}</Text>
+                <View style={{flex: 1, flexDirection: 'row'}}>
+                  <View style={{flex: 1, justifyContent: 'center'}}>
+                    <Image source = {item.i}
+                      style={styles.icons}
+                      />
+                    <Text>{item[0]}</Text>
+                  </View>
+                  <View style={{flex: 2}}>
+                    <Text style={styles.actionHeader}>{item.name}</Text>
+                    <Text style={styles.actionText}>{item.info}</Text>
+                  </View>
+                </View>
               </TouchableOpacity>
             )}
             />
@@ -51,9 +74,9 @@ class HomeScreen extends Component {
 }
 
 const items = [
-  { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code', link: 'QrCode' },{ name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number', link: 'ShopNo' },
-  { name: 'Withdraw from Agent', info: 'Withdraw soem money from a Bongz Agent', link: 'AgentWithdraw' },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw' },
-  { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user', link: 'SendMoney' },{ name: 'Request Payment', info: 'Send QR code or number & request payment', link: 'ReceiveMoney' },
+  { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code', link: 'QrCode', i: 1 },{ name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number', link: 'ShopNo', i: 2 },
+  { name: 'Withdraw from Agent', info: 'Withdraw soem money from a Bongz Agent', link: 'AgentWithdraw', i: 3 },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw', i: 4 },
+  { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user', link: 'SendMoney', i: 5 },{ name: 'Request Payment', info: 'Send QR code or number & request payment', link: 'ReceiveMoney', i: 6 },
 ];
 
 const styles = StyleSheet.create({
@@ -75,22 +98,41 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   slider: {
-    borderStyle: 'solid',
-    borderWidth: 0.5,
+    padding: 5,
     borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
     alignItems: 'center',
   },
   actionHeader: {
-    fontSize: 20,
+    fontSize: 12,
     color: bongzBlue,
   },
-  actions: {
-    padding: 15,
-    borderStyle: 'solid',
-    borderWidth: 0.5,
-    borderRadius: 15,
+  actionText: {
+    fontSize: 10,
   },
-
+  actions: {
+    padding: 5,
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
+  },
+  icons: {
+    width: 40,
+    height: 40,
+  },
 });
 
 const RootStack = StackNavigator({
@@ -127,10 +169,10 @@ const CardStack = StackNavigator({
   Messages: { screen: MessageScreen },
 });
 
-export default TabNavigator({
+TabNavigator({
   Messages: { screen: MessageScreen },
   Cards: { screen: CardScreen },
-  Transact: { screen: TransactScreen },
+  Transact: { screen: HomeScreen },
   Statements: { screen: StatementScreen },
   Profile: { screen: ProfileScreen },
 },
@@ -146,8 +188,7 @@ export default TabNavigator({
 }
 );
 
-
-class App extends Component {
+ export default class App extends Component {
   render() {
     return <RootStack />;
 

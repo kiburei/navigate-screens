@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { bongzBlue } from '../assets/colors';
 
 export default class MessageScreen extends Component {
-  render() {
+render() {
     return (
       <View style={{flex: 1}}>
         <View style={styles.banner}>
+          
           <Text style={styles.header}>Messages</Text>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
@@ -16,32 +17,33 @@ export default class MessageScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={{flex: 1}}>
-            <TouchableOpacity style={styles.tab}>
+            <TouchableOpacity
+              style={styles.tab}>
               <Text style={{fontSize: 18}}>Support</Text>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.main}>
-          <View style={styles.message}>
-            <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
-              porttitor volutpat. Cras ultricies ligula
-              sed magna dictum porta. Cras ultricies
-              ligula sed magna dictum porta.</Text>
-          </View>
-          <View style={styles.message}>
-            <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
-              porttitor volutpat. Cras ultricies ligula
-              sed magna dictum porta. Cras ultricies
-              ligula sed magna dictum porta.</Text>
-          </View>
-          <View style={styles.message}>
-            <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
-              porttitor volutpat. Cras ultricies ligula
-              sed magna dictum porta. Cras ultricies
-              ligula sed magna dictum porta.</Text>
+          <View style={styles.main}>
+            <View style={styles.message}>
+              <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
+                porttitor volutpat. Cras ultricies ligula
+                sed magna dictum porta. Cras ultricies
+                ligula sed magna dictum porta.</Text>
+            </View>
+            <View style={styles.message}>
+              <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
+                porttitor volutpat. Cras ultricies ligula
+                sed magna dictum porta. Cras ultricies
+                ligula sed magna dictum porta.</Text>
+            </View>
+            <View style={styles.message}>
+              <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
+                porttitor volutpat. Cras ultricies ligula
+                sed magna dictum porta. Cras ultricies
+                ligula sed magna dictum porta.</Text>
+            </View>
           </View>
         </View>
-      </View>
     );
   }
 }
