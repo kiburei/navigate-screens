@@ -169,7 +169,7 @@ const CardStack = StackNavigator({
   Messages: { screen: MessageScreen },
 });
 
-TabNavigator({
+export default TabNavigator({
   Messages: { screen: MessageScreen },
   Cards: { screen: CardScreen },
   Transact: { screen: HomeScreen },
@@ -188,7 +188,7 @@ TabNavigator({
 }
 );
 
- export default class App extends Component {
+  class App extends Component {
   render() {
     return <RootStack />;
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { bongzBlue } from '../assets/colors'
 
 export default class CardScreen extends Component {
@@ -12,45 +12,79 @@ export default class CardScreen extends Component {
           </Text>
         </View>
         <View style={styles.active}>
+          
           <Text style={{textAlign: 'center', color: bongzBlue}}>Active Card</Text>
           <Text style={{fontSize: 6, textAlign: 'center'}}>Drag to Change</Text>
         </View>
         <View style={styles.main}>
           <View style={styles.wallet}>
-            <Text>Bongz Wallet</Text>
-            <Text>Your Bongz ID: 22455457</Text>
-            <Text>Account Balance: R. 20,000</Text>
             <View style={{flex: 1, flexDirection: 'row'}}>
-              <View style={{flex: 1}}>
-                <TouchableOpacity style={styles.button}>
-                  <Text style={{color: 'white', fontSize: 12}}>Send Money</Text>
-                </TouchableOpacity>
+              <View style={{flex: 2}}>
+                <Image source={require('../assets/icons/bong_card.png')}
+                  style={styles.image}
+                  />
               </View>
-              <View style={{flex: 1}}>
-                <TouchableOpacity style={styles.button}>
-                  <Text style={{color: 'white', fontSize: 12}}>More Details</Text>
-                </TouchableOpacity>
+              <View style={{flex: 3}}>
+                <Text>Bongz Wallet</Text>
+                <Text>Your Bongz ID: 22455457</Text>
+                <Text>Account Balance: R. 20,000</Text>
+                <View style={{flex: 1, flexDirection: 'row'}}>
+                  <View style={{flex: 1}}>
+                    <TouchableOpacity style={styles.button}>
+                      <Text style={{color: 'white', fontSize: 12}}>Send Money</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={{flex: 1}}>
+                    <TouchableOpacity style={styles.button}>
+                      <Text style={{color: 'white', fontSize: 12}}>More Details</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
               </View>
             </View>
           </View>
           <View style={styles.card}>
-            <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
-            <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
-            <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
-            <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
+            <View style={{flex: 2}}>
+              <Image source={require('../assets/icons/cc.png')}
+                style={styles.image}
+                />
+            </View>
+            <View style={{flex: 3}}>
+              <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
+              <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
+              <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
+              <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
+            </View>
           </View>
+
           <View style={styles.card}>
-            <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
-            <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
-            <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
-            <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
+            <View style={{flex: 2}}>
+              <Image source={require('../assets/icons/cc1.png')}
+                style={styles.image}
+                />
+            </View>
+            <View style={{flex: 3}}>
+              <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
+              <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
+              <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
+              <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
+            </View>
           </View>
+
           <View style={styles.card}>
-            <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
-            <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
-            <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
-            <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
+            <View style={{flex: 2}}>
+              <Image source={require('../assets/icons/cc2.png')}
+                style={styles.image}
+                />
+            </View>
+            <View style={{flex: 3}}>
+              <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
+              <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
+              <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
+              <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
+            </View>
           </View>
+
         </View>
       </View>
     );
@@ -81,6 +115,8 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   card: {
+    flex: 1,
+    flexDirection: 'row',
     borderWidth: 0.5,
     borderRadius: 10,
     margin: 10,
@@ -93,5 +129,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 5,
+  },
+  image: {
+    height: 80,
+    width: 120,
   },
 });

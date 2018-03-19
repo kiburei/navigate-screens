@@ -23,8 +23,9 @@ export default class ReceiveMoney extends Component {
           <Text style={styles.header}>Your QR Code</Text>
             <View style={styles.qrCode}>
               <View style={{flex: 1}}>
-                <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
-                 style={styles.image} />
+                <Image source={require('./assets/icons/qr.png')}
+                  style={styles.image}
+                  />
               </View>
               <View style={{flex: 2}}>
                 <Text style={{paddingTop: 10}}>
@@ -76,9 +77,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    borderWidth: 3,
-    borderColor: bongzBlue,
-    borderRadius: 200,
     height: 100,
     width: 100,
   },

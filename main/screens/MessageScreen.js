@@ -7,7 +7,6 @@ render() {
     return (
       <View style={{flex: 1}}>
         <View style={styles.banner}>
-          
           <Text style={styles.header}>Messages</Text>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
