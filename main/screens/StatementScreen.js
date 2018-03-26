@@ -14,7 +14,7 @@ export default class StatementScreen extends Component {
       <TouchableOpacity
         style={styles.button}
         onPress={ () => this._alert(value) }>
-        <Text style={{color: bongzBlue}}>View More</Text>
+        <Text style={{color: bongzBlue, fontSize: 10}}>View Message</Text>
       </TouchableOpacity>
     );
 
@@ -36,13 +36,19 @@ export default class StatementScreen extends Component {
         </View>
         <View style={styles.tabs}>
           <View style={styles.activeTab}>
-            <Text style={{color: bongzBlue, textAlign: 'center', fontSize: 18}}>Today</Text>
+            <TouchableOpacity>
+              <Text style={{color: bongzBlue, textAlign: 'center', fontSize: 18}}>Today</Text>
+            </TouchableOpacity>
           </View>
           <View style={{flex: 1, padding: 15}}>
-            <Text style={{textAlign: 'center', fontSize: 18}}>This Week</Text>
+            <TouchableOpacity>
+              <Text style={{textAlign: 'center', fontSize: 18}}>This Week</Text>
+            </TouchableOpacity>
           </View>
           <View style={{flex: 1, padding: 15}}>
-            <Text style={{textAlign: 'center', fontSize: 18}}>This Month</Text>
+            <TouchableOpacity>
+              <Text style={{textAlign: 'center', fontSize: 18}}>This Month</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.main}>
@@ -117,6 +123,7 @@ const styles = StyleSheet.create({
     height: 50
   },
   button: {
+    padding: 5,
     borderWidth: 0.8,
     borderColor: bongzBlue,
     borderRadius: 20,

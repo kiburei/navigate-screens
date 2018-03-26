@@ -34,14 +34,13 @@ class HomeScreen extends Component {
     return (
       <View style={{flex: 1}}>
         <View style={styles.banner}>
-          <Text style={styles.bannerText}>Bongz Wallet</Text>
-          <Text style={styles.bannerText}>Tap to Show Balance</Text>
-          <Text style={styles.bannerMoney}>Show balance of selected card</Text>
+          <Image source={require('./main/assets/icons/banner.png')}
+            style={{height: 55, width: 255}}/>
         </View>
         <View style={styles.main}>
           <View style={styles.slider}>
-            <Image source={require('./main/assets/icons/cc.png')}
-              style={{height: 70, width: 120}}
+            <Image source={require('./main/assets/icons/cards.png')}
+              style={{height: 50, width: 300}}
               />
             <Text>Active Card</Text>
             <Text style={{fontSize: 8}}>xxxx-2332</Text>
@@ -173,7 +172,7 @@ const CardStack = StackNavigator({
   Messages: { screen: MessageScreen },
 });
 
- export default TabNavigator({
+TabNavigator({
   Messages: { screen: MessageScreen },
   Cards: { screen: CardScreen },
   Transact: { screen: HomeScreen },
@@ -192,7 +191,7 @@ const CardStack = StackNavigator({
 }
 );
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return <RootStack />;
 

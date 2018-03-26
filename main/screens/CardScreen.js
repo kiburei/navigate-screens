@@ -24,7 +24,7 @@ export default class CardScreen extends Component {
                   style={styles.image}
                   />
               </View>
-              <View style={{flex: 3}}>
+              <View style={styles.bongzCard}>
                 <Text>Bongz Wallet</Text>
                 <Text>Your Bongz ID: 22455457</Text>
                 <Text>Account Balance: R. 20,000</Text>
@@ -112,17 +112,32 @@ const styles = StyleSheet.create({
   },
   wallet: {
     flex: 1,
-    borderWidth: 0.5,
-    borderRadius: 10,
-    padding: 10,
+    alignItems: 'center',
+    padding: 15,
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
   },
   card: {
     flex: 1,
     flexDirection: 'row',
-    borderWidth: 0.5,
-    borderRadius: 10,
-    margin: 10,
-    padding: 10,
+    alignItems: 'center',
+    paddingLeft: 15,
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
   },
   button: {
     borderRadius: 20,
@@ -135,5 +150,8 @@ const styles = StyleSheet.create({
   image: {
     height: 80,
     width: 120,
+  },
+  bongzCard: {
+    flex: 3,
   },
 });
