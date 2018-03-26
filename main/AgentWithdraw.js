@@ -27,7 +27,7 @@ export default class AgentWithdraw extends Component {
             <Dropdown
               data={data}
               />
-          <Text style={styles.header}>Enter Agnet Number</Text>
+            <Text style={styles.header}>Enter Agent Number</Text>
             <TextInput
               keyboardType="numeric"
               />

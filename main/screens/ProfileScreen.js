@@ -7,7 +7,8 @@ export default class ProfileScreen extends Component {
     return (
       <View style={{ flex: 1}}>
         <View style={styles.banner}>
-          <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+          <Image source={require('../assets/icons/user.png')}
+            style={styles.bannerImage}
             />
           <Text style={{textAlign: 'center', color: 'white', fontSize: 18}}>John Doe</Text>
          <Text style={{textAlign: 'center', color: 'white'}}>john.doe@mail.com</Text>
@@ -32,7 +33,8 @@ export default class ProfileScreen extends Component {
           <Text style={styles.heading}>Your QR Code</Text>
           <View style={{flex: 1, flexDirection: 'row', padding: 15, paddingBottom: 15}}>
             <View style={{flex: 2}}>
-              <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+              <Image source={require('../assets/icons/qr.png')}
+                style={{width: 100, height: 100}}
                 />
             </View>
             <View style={{flex: 3}}>
@@ -87,4 +89,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
   },
+  bannerImage: {
+    // borderStyle: 'solid',
+    borderWidth: 3,
+    borderColor: 'white',
+    borderRadius: 200,
+    height: 100,
+    width: 100,
+  }
 });

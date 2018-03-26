@@ -38,10 +38,10 @@ export default class StatementScreen extends Component {
           <View style={styles.activeTab}>
             <Text style={{color: bongzBlue, textAlign: 'center', fontSize: 18}}>Today</Text>
           </View>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, padding: 15}}>
             <Text style={{textAlign: 'center', fontSize: 18}}>This Week</Text>
           </View>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, padding: 15}}>
             <Text style={{textAlign: 'center', fontSize: 18}}>This Month</Text>
           </View>
         </View>
@@ -85,10 +85,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   tabs: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
   },
   activeTab: {
+    padding: 15,
     borderBottomWidth: 3,
     borderColor: bongzBlue,
   },

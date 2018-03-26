@@ -14,6 +14,7 @@ import CardScreen from './main/screens/CardScreen';
 import TransactScreen from './main/screens/TransactScreen';
 import StatementScreen from './main/screens/StatementScreen';
 import ProfileScreen from './main/screens/ProfileScreen';
+import BongzCard from './main/screens/BongzCard';
 
 var icon = [
             {image:require('./main/assets/icons/qr.png')},
@@ -157,6 +158,9 @@ const RootStack = StackNavigator({
   ShopNo: {
     screen: ShopNo,
   },
+  BongzCard: {
+    screen: BongzCard,
+  },
 });
 
 const MessageStack = StackNavigator({
@@ -169,7 +173,7 @@ const CardStack = StackNavigator({
   Messages: { screen: MessageScreen },
 });
 
-export default TabNavigator({
+ export default TabNavigator({
   Messages: { screen: MessageScreen },
   Cards: { screen: CardScreen },
   Transact: { screen: HomeScreen },
@@ -188,7 +192,7 @@ export default TabNavigator({
 }
 );
 
-  class App extends Component {
+class App extends Component {
   render() {
     return <RootStack />;
 

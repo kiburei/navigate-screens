@@ -12,7 +12,7 @@ export default class CardScreen extends Component {
           </Text>
         </View>
         <View style={styles.active}>
-          
+
           <Text style={{textAlign: 'center', color: bongzBlue}}>Active Card</Text>
           <Text style={{fontSize: 6, textAlign: 'center'}}>Drag to Change</Text>
         </View>
@@ -35,7 +35,9 @@ export default class CardScreen extends Component {
                     </TouchableOpacity>
                   </View>
                   <View style={{flex: 1}}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity
+                      onPress={() => this.props.navigation.navigate('BongzCard') }
+                      style={styles.button}>
                       <Text style={{color: 'white', fontSize: 12}}>More Details</Text>
                     </TouchableOpacity>
                   </View>
@@ -64,7 +66,7 @@ export default class CardScreen extends Component {
                 />
             </View>
             <View style={{flex: 3}}>
-              <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
+              <Text style={{fontSize: 18, color: bongzBlue}}>Absa Bank</Text>
               <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
               <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
               <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>
@@ -78,7 +80,7 @@ export default class CardScreen extends Component {
                 />
             </View>
             <View style={{flex: 3}}>
-              <Text style={{fontSize: 18, color: bongzBlue}}>Standard Bank</Text>
+              <Text style={{fontSize: 18, color: bongzBlue}}>FNB Bank</Text>
               <Text style={{fontSize: 12}}>Account Number: 22737985845</Text>
               <Text style={{fontSize: 12}}>Account Name: Andrew Mwangi</Text>
               <Text style={{fontSize: 12}}>Card Number: 22737985845</Text>

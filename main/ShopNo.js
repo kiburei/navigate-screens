@@ -39,7 +39,7 @@ export default class ShopNo extends Component {
             lable='Frequently Paid'
             data={data}
             />
-          <Text style={styles.header}>Enter SHop Number</Text>
+          <Text style={styles.header}>Enter Shop Number</Text>
           <TextInput
             keyboardType='numeric'
             />
