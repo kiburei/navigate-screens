@@ -15,6 +15,7 @@ import TransactScreen from './main/screens/TransactScreen';
 import StatementScreen from './main/screens/StatementScreen';
 import ProfileScreen from './main/screens/ProfileScreen';
 import BongzCard from './main/screens/BongzCard';
+import Navigation from './Navigation';
 
 var icon = [
             {image:require('./main/assets/icons/qr.png')},
@@ -69,19 +70,20 @@ class HomeScreen extends Component {
             />
         </View>
       </View>
+      // <MainTabs/>
     );
   }
 }
 
 const items = [
   { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code', link: 'QrCode', i: 1 },{ name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number', link: 'ShopNo', i: 2 },
-  { name: 'Withdraw from Agent', info: 'Withdraw soem money from a Bongz Agent', link: 'AgentWithdraw', i: 3 },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw', i: 4 },
+  { name: 'Withdraw from Agent', info: 'Withdraw some money from a Bongz Agent', link: 'AgentWithdraw', i: 3 },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw', i: 4 },
   { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user', link: 'SendMoney', i: 5 },{ name: 'Request Payment', info: 'Send QR code or number & request payment', link: 'ReceiveMoney', i: 6 },
 ];
 
 const styles = StyleSheet.create({
   banner: {
-    padding: 15,
+    flex: 2,
     backgroundColor: bongzBlue,
     justifyContent: 'center',
     alignItems: 'center',
@@ -135,6 +137,7 @@ const styles = StyleSheet.create({
   },
 });
 
+
 const RootStack = StackNavigator({
   Home: {
     screen: HomeScreen,
@@ -162,20 +165,11 @@ const RootStack = StackNavigator({
   },
 });
 
-const MessageStack = StackNavigator({
+
+const MainTabs = TabNavigator({
   Messages: { screen: MessageScreen },
   Cards: { screen: CardScreen },
-});
-
-const CardStack = StackNavigator({
-  Transact: { screen: TransactScreen },
-  Messages: { screen: MessageScreen },
-});
-
-TabNavigator({
-  Messages: { screen: MessageScreen },
-  Cards: { screen: CardScreen },
-  Transact: { screen: HomeScreen },
+  Home: { screen: RootStack },
   Statements: { screen: StatementScreen },
   Profile: { screen: ProfileScreen },
 },
@@ -191,9 +185,12 @@ TabNavigator({
 }
 );
 
-export default class App extends Component {
+ export default class App extends Component {
   render() {
-    return <RootStack />;
+    return (
+      // <RootStack />
+      <MainTabs />
+    );
 
   }
 }

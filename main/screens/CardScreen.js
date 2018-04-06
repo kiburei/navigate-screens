@@ -36,7 +36,6 @@ export default class CardScreen extends Component {
                   </View>
                   <View style={{flex: 1}}>
                     <TouchableOpacity
-                      onPress={() => this.props.navigation.navigate('BongzCard') }
                       style={styles.button}>
                       <Text style={{color: 'white', fontSize: 12}}>More Details</Text>
                     </TouchableOpacity>
