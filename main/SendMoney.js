@@ -2,35 +2,24 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 import { bongzBlue } from './assets/colors';
+import Recipients from "./assets/recipients.json";
 
 
 export default class SendMoney extends Component {
-  static navigationOptions = {
+    static navigationOptions = {
     header: null
   }
   render() {
-    let data = [{
-      value: 'Brian Wamiori',
-    }, {
-      value: 'Lilian Wangare',
-    }, {
-      value: 'Andrew Mwangi',
-    }
-  ];
     return (
       <View>
         <View style={styles.banner}>
           <Text style={styles.bannerText}>Send Money</Text>
         </View>
         <View style={styles.form}>
-          <Text style={styles.header}>Frequently Used Contacts</Text>
-            <Dropdown
-              data={data}
-              />
-            <Text style={styles.header}>Bongz ID</Text>
+            <Text style={styles.header}>Enter Recipient Mobile Number or Bongz ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </Text>
             <TextInput
               keyboardType="numeric"
-              />
+            />
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('QrCode')}
                 style={styles.button}>

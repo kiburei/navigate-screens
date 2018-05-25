@@ -10,6 +10,9 @@ export default class CardScreen extends Component {
           <Text style={styles.header}>
             My Cards
           </Text>
+          <TouchableOpacity style={styles.add}>
+            <Text>Add Card</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.active}>
 
@@ -152,5 +155,9 @@ const styles = StyleSheet.create({
   },
   bongzCard: {
     flex: 3,
+  },
+  add: {
+    backgroundColor: 'red';
+    borderRadius: 5;
   },
 });

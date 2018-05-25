@@ -10,11 +10,15 @@ export default class AtmWithdraw extends Component {
   }
   render() {
     let data = [{
-      value: 'Kwa Zulu Natal',
+      value: 'Standard Bank',
     }, {
-      value: 'Malema Stores',
+      value: 'Absa',
     }, {
-      value: 'Xhobuku',
+      value: 'FNB',
+    }, {
+      value: 'Nedbank',
+    }, {
+      value: 'Capitec Bank',
     }
   ];
     return (
@@ -29,18 +33,14 @@ export default class AtmWithdraw extends Component {
           and withdraw
         </Text>
         <View style={styles.form}>
-          <Text style={styles.header}>Frequently Used ATMs</Text>
+          <Text style={styles.header}>Frequently Used Banks</Text>
             <Dropdown
               data={data}
               />
-          <Text style={styles.header}>Enter Agnet Number</Text>
+            <Text style={styles.header}>Enter ATM Number</Text>
             <TextInput
               keyboardType="numeric"
               />
-          <Text style={styles.header}>Enter Amount</Text>
-          <TextInput
-            keyboardType="numeric"
-            />
           <TouchableOpacity style={styles.button}>
             <Text style={{color: 'white'}}>Send Me My Code</Text>
           </TouchableOpacity>

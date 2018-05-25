@@ -167,9 +167,9 @@ const RootStack = StackNavigator({
 
 
 const MainTabs = TabNavigator({
+  Home: { screen: RootStack },
   Messages: { screen: MessageScreen },
   Cards: { screen: CardScreen },
-  Home: { screen: RootStack },
   Statements: { screen: StatementScreen },
   Profile: { screen: ProfileScreen },
 },
