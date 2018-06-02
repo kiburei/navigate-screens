@@ -1606,7 +1606,7 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
-create-react-class@^15.6.3:
+create-react-class@^15.6.2, create-react-class@^15.6.3:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   dependencies:
@@ -3965,12 +3965,13 @@ react-devtools-core@3.1.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-app-intro@^1.1.5:
+"react-native-app-intro@https://github.com/merryjs/react-native-app-intro":
   version "1.1.5"
-  resolved "https://registry.yarnpkg.com/react-native-app-intro/-/react-native-app-intro-1.1.5.tgz#34a2d2265b2d654d31bae743c404856c37448692"
+  resolved "https://github.com/merryjs/react-native-app-intro#b5bbdbbd8ff8be0842d22c77a9d857cc30e413d8"
   dependencies:
     assign-deep "^0.4.5"
-    react-native-swiper "git+https://github.com/FuYaoDe/react-native-swiper.git"
+    prop-types "^15.6.0"
+    react-native-swiper "https://github.com/merryjs/react-native-swiper.git"
 
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
@@ -4051,10 +4052,12 @@ react-native-super-grid@^2.0.2:
   dependencies:
     prop-types "^15.6.0"
 
-"react-native-swiper@git+https://github.com/FuYaoDe/react-native-swiper.git":
+"react-native-swiper@https://github.com/merryjs/react-native-swiper.git":
   version "1.4.4"
-  resolved "git+https://github.com/FuYaoDe/react-native-swiper.git#a6417ff41a8b2d490bdcc4541015ab35736d4595"
+  resolved "https://github.com/merryjs/react-native-swiper.git#2051e49de8696fa96612d0262a32ec902b631394"
   dependencies:
+    create-react-class "^15.6.2"
+    prop-types "^15.6.0"
     react-timer-mixin "^0.13.3"
 
 react-native-tab-navigator@^0.3.4:
