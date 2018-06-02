@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import MainTabs from './main/routes';
 
-AppRegistry.registerComponent('nav_tutorial', () => App);
+AppRegistry.registerComponent('nav_tutorial', () => MainTabs);

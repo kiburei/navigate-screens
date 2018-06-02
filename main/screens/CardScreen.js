@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   add: {
-    backgroundColor: 'red';
-    borderRadius: 5;
+    backgroundColor: 'red',
+    borderRadius: 5,
   },
 });
