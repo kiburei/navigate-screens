@@ -10,12 +10,13 @@ import ReceiveMoney from '../ReceiveMoney';
 import SendMoney from '../SendMoney';
 import ShopNo from '../ShopNo';
 import MessageScreen from '../screens/MessageScreen';
-import CardScreen from '../screens/CardScreen';
+import CardScreen from '../screens/cardScreen';
 import TransactScreen from '../screens/TransactScreen';
 import StatementScreen from '../screens/StatementScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BongzCard from '../screens/BongzCard';
 import HomeScreen from '../screens/homeScreen';
+// import IntroScreen from '../screens/introScreen';
 
 
 const RootStack = StackNavigator({
