@@ -6,27 +6,33 @@ import {
   Alert
 } from 'react-native';
 import AppIntro from 'react-native-app-intro';
+import { StackNavigator } from 'react-navigation';
 import styles from './Intro.Styles';
 import IntroScreen from './IntroScreen';
 
-export default class Intro extends Component {
+export default class IntroContainer extends Component {
     onSkipBtnHandle = (index) => {
-        Alert.alert('Skip');
         console.log(index);
+        this.props.navigation.navigate('Main');
     }
     doneBtnHandle = () => {
-        Alert.alert('Done');
+        this.props.navigation.navigate('Main');
     }
     nextBtnHandle = (index) => {
-        Alert.alert('Next');
         console.log(index);
     }
     onSlideChangeHandle = (index, total) => {
         console.log(index, total);
     }
     render() {
+        console.log("this.props.navigation", this.props.navigation)
         return (
-            <AppIntro showSkipButton={true} skipBtnLabel='Skip' nextBtnLabel='Next'>
+            <AppIntro showSkipButton={true} skipBtnLabel='Skip' nextBtnLabel='Next'
+                onNextBtnClick={this.nextBtnHandle}
+                onDoneBtnClick={this.doneBtnHandle}
+                onSkipBtnClick={this.onSkipBtnHandle}
+                onSlideChange={this.onSlideChangeHandle}
+            >
                 <View style={styles.slide}>
                     <Image source={require('../../assets/images/background-image.jpeg')} style={styles.backGroundImage} />
                     <View style={styles.overlay} />
