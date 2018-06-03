@@ -1,5 +1,4 @@
 import { AppRegistry,  } from 'react-native';
-import IntroScreen from './main/screens/introScreen';
-import MainTabs from './main/routes';
+import Routes from './main/routes';
 
-AppRegistry.registerComponent('nav_tutorial', () => MainTabs);
+AppRegistry.registerComponent('nav_tutorial', () => Routes);
