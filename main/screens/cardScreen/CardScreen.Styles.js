@@ -1,5 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { bongzBlue } from '../../assets/colors';
+const { height, width } = Dimensions.get('window');
+
+const textInputWidth = ((width-50)/2);
+const textWidth = (width-50);
 
 export default StyleSheet.create({
     banner: {
@@ -72,5 +76,69 @@ export default StyleSheet.create({
     addText: {
         color: '#fff', 
         fontSize: 30
-    }
+    },
+    modalView:  {
+        flex:0.5,
+        justifyContent: 'space-around', 
+        alignItems: 'center', 
+        padding: 20
+    },
+    closeModal: {
+        flex: 1, 
+        alignSelf: 'flex-end', 
+        backgroundColor: 'lightgray'
+    },
+    columnView: {
+        flex:1, 
+        borderRadius: 5,
+        borderWidth: 1, 
+        borderColor: 'lightgray', 
+        marginBottom: 20, 
+        padding: 1 
+    },
+    columnView1: {
+        flex:1,
+        borderRadius: 5,
+        borderWidth: 1, 
+        borderColor: 'lightgray', 
+        marginBottom: -1, 
+        padding: 1 
+    },
+    columnView2: {
+        flex:1,
+        flexDirection: 'row',
+        borderRadius: 5,
+        borderWidth: 1, 
+        borderColor: 'lightgray', 
+        marginBottom: 20, 
+        padding: 1
+    },
+    textInput: {
+        width: textWidth
+    },
+    textInput1: {
+        width: textInputWidth
+    },
+    checkBox: {
+        flex:1, 
+        width: textWidth,
+        borderWidth: 1, 
+        borderColor: 'lightgray', 
+        marginBottom: 20, 
+        padding: 20
+    },
+    cardSaveButton: {
+        flex:1 , 
+        padding: 20,
+        width: textWidth, 
+        backgroundColor: bongzBlue, 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        borderRadius: 5
+    },
+    saveText: {
+        color: '#fff', 
+        fontSize: 18, 
+        fontWeight: 'bold'
+    },
   });

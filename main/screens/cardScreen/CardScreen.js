@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Modal, TouchableHighlight, TextInput } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    TouchableOpacity, 
+    Image,
+    Modal, 
+    TouchableHighlight, 
+    TextInput, 
+    Dimensions, 
+    Keyboard, 
+    ScrollView 
+} from 'react-native';
 import { bongzBlue } from '../../assets/colors';
 import styles from './CardScreen.Styles';
+import { CheckBox, Icon } from 'react-native-elements';
+import CardModal from './CardModal'
+const {height, width} = Dimensions.get('window');
 
+height = height - 20;
 export default class CardScreen extends Component {
-  state = {
-    modalVisible: false,
-  }
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalVisible: false,
+        };  
+    }
+    closeModal () {
+        console.log("closed close");
+        this.setState({modalVisible: false });
+    }
   render() {
     return (
       <View style={{flex: 1}}>
@@ -95,40 +117,13 @@ export default class CardScreen extends Component {
           </View>
 
         </View>
-        <View>
-            <Modal
+        <Modal
             animationType="slide"
             transparent={false}
             visible={this.state.modalVisible}
-            onRequestClose={() => {
-                alert('Modal has been closed.');
-                this.setState({modalVisible: !this.state.modalVisible});
-            }}>
-            <View style={{flex:1, justifyContent: 'center', alignItems: 'center', padding: 50, borderWidth: 0.3}}>
-                <View style={{flex:1, alignContent: 'flex-end' }}>
-                    <TouchableHighlight
-                        onPress={() => {
-                            this.setState({modalVisible: !this.state.modalVisible});
-                        }} style={{backgroundColor: 'lightgray', borderRadius: 20, padding: 10}}>
-                        <Text style={{color: '#fff'}}>x</Text>
-                    </TouchableHighlight>
-                </View>
-                <View style={{flex:1 }}>
-                    <TextInput placeholder='Email' />
-                </View>
-                <View style={{flex:1 }}>
-                    <TextInput placeholder='Email' />
-                </View>
-                <View style={{flex:1 }}>
-                    <TextInput placeholder='Email' />
-                </View>
-                <View style={{flex:1 }}>
-                    <Text>Save</Text>
-                </View>
-
-            </View>
-            </Modal>
-          </View>  
+            onRequestClose={() => this.setState({modalVisible: !this.state.modalVisible})}>
+                <CardModal closeModal={this.closeModal.bind(this)}/>
+        </Modal>
       </View>
     );
   }
