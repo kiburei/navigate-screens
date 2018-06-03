@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity, Image, BackHandler } from 'react-native';
 import GridView from 'react-native-super-grid';
 import styles from './HomeScreen.styles';
 
@@ -13,10 +13,16 @@ var icon = [
           ];
 
 export default class HomeScreen extends Component {
- static navigationOptions = {
-    header: null
+    static navigationOptions =  {
+        header: null
+    }   
+ componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', () => false);
   }
 
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', () => false);
+  }
   render() {
     return (
       <View style={{flex: 1}}>
