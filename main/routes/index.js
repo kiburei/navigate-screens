@@ -16,8 +16,7 @@ import StatementScreen from '../screens/StatementScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BongzCard from '../screens/BongzCard';
 import HomeScreen from '../screens/homeScreen';
-// import IntroScreen from '../screens/introScreen';
-
+import IntroScreen from '../screens/introScreen';
 
 const RootStack = StackNavigator({
   Home: {
@@ -56,18 +55,37 @@ const MainTabs = TabNavigator({
     },
     {
         tabBarOptions: {
-        activeTintColor: bongzBlue,
-        inactiveTintColor: 'gray',
-    },
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    animationEnabled: false,
-    swipeEnabled: false,
+            activeTintColor: bongzBlue,
+            inactiveTintColor: 'gray',
+        },
+        tabBarComponent: TabBarBottom,
+        tabBarPosition: 'bottom',
+        animationEnabled: false,
+        swipeEnabled: false,
+        navigationOptions: {
+            header: null
+        }
     }
 );
 
+const MainStack = StackNavigator(
+    {
+        Intro: {
+        screen: IntroScreen,
+        }, 
+        Main: {
+        screen: MainTabs, 
+        }, 
+    },
+    {
+        navigationOptions: {
+            header: null
+        },
+        gesturesEnabled: false
+    }
+);
 export default class App extends Component {
     render() {
-        return <MainTabs />
+        return <MainStack />
     }
 }
