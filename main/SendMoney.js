@@ -30,7 +30,7 @@ export default class SendMoney extends Component {
             keyboardType="numeric"
             />
           <TouchableOpacity style={styles.button}>
-            <Text style={{color: 'white'}}>Send Me My Code</Text>
+            <Text style={{color: 'white'}}>Send</Text>
           </TouchableOpacity>
         </View>
       </View>
