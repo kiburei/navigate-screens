@@ -49,12 +49,6 @@ export default class CardModal extends Component {
                             keyboardType='numeric' 
                             style={styles.textInput1}/>
                     </View>
-                    <CheckBox
-                        title='Remember Me'
-                        checked={this.state.checked}
-                        onPress={() => this.setState({checked: !this.state.checked})}
-                        containerStyle={styles.checkBox}
-                    />
                     <TouchableOpacity style={styles.cardSaveButton}>
                         <Text style={styles.saveText}>Save</Text>
                     </TouchableOpacity>
