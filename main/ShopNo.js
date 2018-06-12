@@ -44,7 +44,7 @@ export default class ShopNo extends Component {
             <Text style={styles.headerSmall}>Contacts: <Text style={styles.details}>+27 21 578 2545</Text></Text>
           </View>
         </View>
-        <View style={styles.form}>
+        <KeyboardAvoidingView style={styles.form}>
           <Text style={styles.header}>Frequently Paid</Text>
           <Dropdown
             lable='Frequently Paid'
@@ -61,7 +61,7 @@ export default class ShopNo extends Component {
           <TouchableOpacity style={styles.button} onPress={() => this.confirmPayment()}>
             <Text style={{color: 'white'}}>Pay Now</Text>
           </TouchableOpacity>
-        </View>
+        </KeyboardAvoidingView>
       </View>
     );
   }
