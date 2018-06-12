@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Alert } from 'react-native';
 import { bongzBlue } from './assets/colors';
 import { Dropdown } from 'react-native-material-dropdown';
 
 export default class ShopNo extends Component {
   static navigationOptions = {
     header: null
+  }
+  confirmPayment(){
+    Alert.alert(
+        '',
+        `Thank you for your payment. Goods amount 999.99 at` +`\n`
+        +`Shop No 99999`,
+        [
+            { text: 'Ok', onPress: () => this.props.navigation.navigate('Home') }
+        ]
+    )
+    
   }
   render() {
     let data = [{
@@ -47,7 +58,7 @@ export default class ShopNo extends Component {
           <TextInput
             keyboardType='numeric'
             />
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => this.confirmPayment()}>
             <Text style={{color: 'white'}}>Pay Now</Text>
           </TouchableOpacity>
         </View>
