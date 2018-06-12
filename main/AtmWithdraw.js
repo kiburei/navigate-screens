@@ -50,6 +50,11 @@ export default class AtmWithdraw extends Component {
   }
 }
 
+{/* <Text style={styles.header}>Enter ATM Number</Text>
+<TextInput
+    keyboardType="numeric"
+/> */}
+
 const styles = StyleSheet.create({
   banner: {
     padding: 15,
