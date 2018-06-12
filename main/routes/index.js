@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 import QrCode from '../QrCode';
 import GridView from 'react-native-super-grid';
 import { bongzBlue } from '../assets/colors';
@@ -47,11 +48,71 @@ const RootStack = StackNavigator({
 
 
 const MainTabs = TabNavigator({
-    Home: { screen: RootStack },
-    Messages: { screen: MessageScreen },
-    Cards: { screen: CardScreen },
-    Statements: { screen: StatementScreen },
-    Profile: { screen: ProfileScreen },
+        Home: { 
+            screen: RootStack,
+            navigationOptions: {
+                tabBarLabel: 'Home',
+                tabBarIcon: ({focused}) => 
+                <Icon 
+                    type='ionicon' 
+                    name={focused ? 'ios-home' : 'ios-home-outline'} 
+                    size={30} 
+                    color={focused ? bongzBlue : 'gray'}
+                />,
+            },
+        },
+        Messages: { 
+            screen: MessageScreen,
+            navigationOptions: {
+                tabBarLabel: 'Messages',
+                tabBarIcon: ({focused}) => 
+                <Icon 
+                    type='material-community' 
+                    name={focused ? 'message-text' : 'message-text-outline'} 
+                    size={30} 
+                    color={focused ? bongzBlue : 'gray'}
+                />,
+            },
+        }, 
+        Cards: { 
+            screen: CardScreen,
+            navigationOptions: {
+                tabBarLabel: 'Cards',
+                tabBarIcon: ({focused}) => 
+                <Icon 
+                    type='ionicon' 
+                    name={focused ? 'ios-card' : 'ios-card-outline'} 
+                    size={30} 
+                    color={focused ? bongzBlue : 'gray'}
+                />,
+            },
+        }, 
+        Statements: { 
+            screen: StatementScreen,
+            navigationOptions: {
+                tabBarLabel: 'Statements',
+                tabBarIcon: ({focused}) => 
+                <Icon 
+                    type='ionicon' 
+                    name={focused ? 'ios-paper' : 'ios-paper-outline'} 
+                    size={30} 
+                    color={focused ? bongzBlue : 'gray'}
+                />,
+            },
+        }, 
+        Profile: { 
+            screen: ProfileScreen,
+            navigationOptions: {
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({focused}) => 
+                <Icon 
+                    type='ionicon' 
+                    name={focused ? 'ios-person' : 'ios-person-outline'} 
+                    size={30} 
+                    color={focused ? bongzBlue : 'gray'}
+                />,
+            },
+        }, 
     },
     {
         tabBarOptions: {
