@@ -4,6 +4,8 @@
 
 ## install packages using yarn
 
+## link packages 
+
 ## run simulator or on device
 
 ## 
