@@ -25,9 +25,11 @@ export default class IntroContainer extends Component {
         console.log(index, total);
     }
     render() {
-        console.log("this.props.navigation", this.props.navigation)
         return (
-            <AppIntro showSkipButton={true} skipBtnLabel='Skip' nextBtnLabel='Next'
+            <AppIntro 
+                showSkipButton={true} 
+                skipBtnLabel='Skip' 
+                nextBtnLabel='Next'
                 onNextBtnClick={this.nextBtnHandle}
                 onDoneBtnClick={this.doneBtnHandle}
                 onSkipBtnClick={this.onSkipBtnHandle}
