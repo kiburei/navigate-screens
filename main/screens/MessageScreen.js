@@ -4,35 +4,62 @@ import { bongzBlue } from '../assets/colors';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 
 const FirstRoute = () => <View style={styles.main}>
-                            <View style={styles.message}>
-                              <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
-                                porttitor volutpat. Cras ultricies ligula
-                                sed magna dictum porta. Cras ultricies
-                                ligula sed magna dictum porta.</Text>
+                            <View style={styles.messageView}>
+                                <View style={styles.messageLabel}>
+                                    <Text style={styles.messageLabelText}>B</Text>
+                                </View>
+                                <View style={styles.message}>
+                                <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
+                                    porttitor volutpat. Cras ultricies ligula
+                                    sed magna dictum porta. Cras ultricies
+                                    ligula sed magna dictum porta.</Text>
+                                </View>
                             </View>
-                            <View style={styles.message}>
-                              <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
-                                porttitor volutpat. Cras ultricies ligula
-                                sed magna dictum porta. Cras ultricies
-                                ligula sed magna dictum porta.</Text>
-                            </View>
-                            <View style={styles.message}>
-                              <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
-                                porttitor volutpat. Cras ultricies ligula
-                                sed magna dictum porta. Cras ultricies
-                                ligula sed magna dictum porta.</Text>
-                            </View>
+                            <View style={styles.messageView}>
+                                <View style={styles.messageLabel}>
+                                    <Text style={styles.messageLabelText}>B</Text>
+                                </View>    
+                                <View style={styles.message}>
+                                <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
+                                    porttitor volutpat. Cras ultricies ligula
+                                    sed magna dictum porta. Cras ultricies
+                                    ligula sed magna dictum porta.</Text>
+                                </View>
+                            </View>  
+                            <View style={styles.messageView}>
+                                <View style={styles.messageLabel}>
+                                    <Text style={styles.messageLabelText}>B</Text>
+                                </View>   
+                                <View style={styles.message}>
+                                <Text style={styles.messageText}>Vivamus suscipit tortor eget felis
+                                    porttitor volutpat. Cras ultricies ligula
+                                    sed magna dictum porta. Cras ultricies
+                                    ligula sed magna dictum porta.</Text>
+                                </View>
+                            </View>    
                           </View>;
 
 const SecondRoute = () => <View style={styles.main}>
                             <View style={{flex: 9}}>
-                              <View style={styles.message}>
-                                <Text style={styles.messageText}>How may we help you Brian?</Text>
+                             <View style={styles.messageView}>
+                                <View style={styles.messageLabel}>
+                                    <Text style={styles.messageLabelText}>B</Text>
+                                </View>
+                                <View style={styles.message}>
+                                    <Text style={styles.messageText}>How may we help you Brian?</Text>
+                                </View>
                               </View>
-                              <View style={styles.message}>
-                                <Text style={styles.messageText}>My emails are not going through.
-                                  Please help.</Text>
-                              </View>
+                              <View style={styles.messageView}>
+                                <View style={styles.messageLabelImage}>
+                                    <Image source={require('../assets/icons/user.png')}
+                                        style={styles.image}
+                                    />
+                                </View>
+                                <View style={styles.message}>
+                                    <Text style={styles.messageText}>My emails are not going through.
+                                    Please help.</Text>
+                                </View>
+                               </View>  
                             </View>
                             <View style={{flex: 1}}>
                               <View style={{flex: 1, flexDirection: 'row'}}>
@@ -62,7 +89,12 @@ export default class MessageScreen extends Component {
 
   _handleIndexChange = index => this.setState({ index });
 
-  _renderHeader = props => <TabBar style={{backgroundColor: bongzBlue}} {...props} />;
+  _renderHeader = props => <TabBar 
+                                style={{backgroundColor: 'white'}} 
+                                indicatorStyle={{backgroundColor: bongzBlue}} 
+                                labelStyle={{ color: this.props.focused ? bongzBlue : 'grey'}}
+                                {...props} 
+                            />
 
   _renderScene = SceneMap({
     first: FirstRoute,
@@ -71,25 +103,39 @@ export default class MessageScreen extends Component {
 
 render() {
     return (
-      <TabViewAnimated
-        navigationState={this.state}
-        renderScene={this._renderScene}
-        renderHeader={this._renderHeader}
-        onIndexChange={this._handleIndexChange}
-        />
+        <View style={{flex:1}}>
+            <View style={styles.banner}>
+                <Text style={styles.header}>Messages </Text>
+            </View>
+            <View style={styles.container}>
+                <TabViewAnimated
+                    navigationState={this.state}
+                    renderScene={this._renderScene}
+                    renderHeader={this._renderHeader}
+                    onIndexChange={this._handleIndexChange}
+                    />
+            </View>
+        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   banner: {
+    flex:1,
     backgroundColor: bongzBlue,
     padding: 10,
     paddingLeft: 15,
   },
   header: {
+    fontSize: 20,
+    paddingLeft: 15,
     color: 'white',
-    fontSize: 25.
+  },
+  container: {
+    flex: 9,
+    justifyContent: 'center',
+    alignContent: 'center'
   },
   tab: {
     justifyContent: 'center',
@@ -100,6 +146,15 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
   },
+  messageView: {
+    marginLeft: 20,
+    marginRight: 15,
+    marginTop: 50,
+  },
+  image: {
+      width: 40,
+      height: 40,
+  },
   message: {
     borderRadius: 15,
     shadowColor: '#000',
@@ -107,12 +162,35 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10,
   },
   messageText: {
     padding: 20,
     fontSize: 16,
   },
+  messageLabel: {
+      backgroundColor: bongzBlue,
+      borderRadius: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 50,
+      height: 50,
+      marginRight: -10,
+      marginBottom: -20,
+      
+  },
+   messageLabelImage: {
+      backgroundColor: bongzBlue,
+      borderRadius: 50,
+      justifyContent: 'flex-end',
+      alignItems: 'flex-end',
+      width: 60,
+      height: 60,
+      marginLeft: '90%',
+      marginBottom: -20,
+      
+  },
+  messageLabelText: {
+      color: '#fff',
+      fontWeight: 'bold'
+  }
 });
