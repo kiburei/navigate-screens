@@ -22,50 +22,50 @@ export default class AgentWithdraw extends Component {
   ];
     return (
         <View style={{flex: 1}}>
-        <View style={styles.banner}>
-          <Text style={styles.bannerText}>Withdraw From Agent</Text>
-        </View>
-        <KeyboardAvoidingView style={styles.form}>
-        <Text style={styles.header}>Frequently used Agents</Text>
-        <View style={{flexDirection: 'row', width: '100%', borderWidth: 2, borderColor: 'lightgray'}}>
-            <Picker
-                selectedValue={this.state.language}
-                style={{ height: 50,  width: '90%', borderColor: 'lightgray'}}
-                onValueChange={(itemValue, itemIndex) => this.setState({store: itemValue})}>
-                <Picker.Item label="Kwa Zulu Natal" value="Kwa Zulu Natal" />
-                <Picker.Item label="Malema Stores" value="Malema Stores" />
-                <Picker.Item label="Xhobuku" value="Xhobuku" />
-            </Picker>
-            <Icon 
-                type='ionicon' 
-                name='ios-search' 
-                color='#fff' 
-                containerStyle={{
-                    width: '10%', 
-                    backgroundColor: 'grey', 
-                    justifyContent: 'center', 
-                    alignItems: 'center'
-                }}
-            />
-        </View>  
-        <Text style={styles.header}>Enter Agent Number</Text>
-        <View style={styles.textInputView}>
-            <TextInput
-                keyboardType='numeric'
-                underlineColorAndroid='transparent'
-            />
-        </View>
-        <Text style={styles.header}>Enter Amount</Text>
-        <View style={styles.textInputView}>
-            <TextInput
-                keyboardType='numeric'
-                underlineColorAndroid='transparent'
-            />
-        </View>  
-        <TouchableOpacity style={styles.button} onPress={() => this.confirmPayment()}>
-            <Text style={{color: 'white', fontWeight: 'bold'}}>Withdraw</Text>
-        </TouchableOpacity>
-        </KeyboardAvoidingView>
+            <View style={styles.banner}>
+                <Text style={styles.bannerText}>Withdraw From Agent</Text>
+            </View>
+            <KeyboardAvoidingView style={styles.form}>
+                <Text style={styles.header}>Frequently used Agents</Text>
+                <View style={{flexDirection: 'row', width: '100%', borderWidth: 2, borderColor: 'lightgray'}}>
+                    <Picker
+                        selectedValue={this.state.store}
+                        style={{ height: 50,  width: '90%', borderColor: 'lightgray'}}
+                        onValueChange={(itemValue, itemIndex) => this.setState({store: itemValue})}>
+                        <Picker.Item label="Kwa Zulu Natal" value="Kwa Zulu Natal" />
+                        <Picker.Item label="Malema Stores" value="Malema Stores" />
+                        <Picker.Item label="Xhobuku" value="Xhobuku" />
+                    </Picker>
+                    <Icon 
+                        type='ionicon' 
+                        name='ios-search' 
+                        color='#fff' 
+                        containerStyle={{
+                            width: '10%', 
+                            backgroundColor: 'grey', 
+                            justifyContent: 'center', 
+                            alignItems: 'center'
+                        }}
+                    />
+                </View>  
+                <Text style={styles.header}>Enter Agent Number</Text>
+                <View style={styles.textInputView}>
+                    <TextInput
+                        keyboardType='numeric'
+                        underlineColorAndroid='transparent'
+                    />
+                </View>
+                <Text style={styles.header}>Enter Amount</Text>
+                <View style={styles.textInputView}>
+                    <TextInput
+                        keyboardType='numeric'
+                        underlineColorAndroid='transparent'
+                    />
+                </View>  
+                <TouchableOpacity style={styles.button}>
+                    <Text style={{color: 'white', fontWeight: 'bold'}}>Withdraw</Text>
+                </TouchableOpacity>
+            </KeyboardAvoidingView>
     </View>
     );
   }
@@ -108,27 +108,3 @@ const styles = StyleSheet.create({
       borderColor: 'lightgray'
   },
 });
-
-
-{/* <View>
-        <View style={styles.banner}>
-          <Text style={styles.bannerText}>Withdraw From Agent</Text>
-        </View>
-        <View style={styles.form}>
-          <Text style={styles.header}>Frequently Used Agents</Text>
-            <Dropdown
-              data={data}
-              />
-            <Text style={styles.header}>Enter Agent Number</Text>
-            <TextInput
-              keyboardType="numeric"
-              />
-          <Text style={styles.header}>Enter Amount</Text>
-          <TextInput
-            keyboardType="numeric"
-            />
-          <TouchableOpacity style={styles.button}>
-            <Text style={{color: 'white'}}>Withdraw</Text>
-          </TouchableOpacity>
-        </View>
-      </View> */}
