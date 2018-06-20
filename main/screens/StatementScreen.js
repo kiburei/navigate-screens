@@ -113,7 +113,12 @@ export default class StatementScreen extends Component {
 
   _handleIndexChange = index => this.setState({ index });
 
-  _renderHeader = props => <TabBar style={{backgroundColor: bongzBlue}} {...props} />;
+  _renderHeader = props => <TabBar 
+                                style={{backgroundColor: '#fff'}} 
+                                indicatorStyle={{backgroundColor: bongzBlue}}
+                                labelStyle={{ color: this.props.focused ? bongzBlue : 'grey'}}  
+                                {...props} 
+                            />;
 
   _renderScene = SceneMap({
     first: FirstRoute,
@@ -123,42 +128,73 @@ export default class StatementScreen extends Component {
 
   render() {
     return (
-          <TabViewAnimated
-            navigationState={this.state}
-            renderScene={this._renderScene}
-            renderHeader={this._renderHeader}
-            onIndexChange={this._handleIndexChange}
-            />
-          );
+        <View style={{flex:1}}>
+            <View style={styles.banner}>
+                <Text style={styles.header}>Statements </Text>
+            </View>
+            <View style={styles.container}>
+                <TabViewAnimated
+                    navigationState={this.state}
+                    renderScene={this._renderScene}
+                    renderHeader={this._renderHeader}
+                    onIndexChange={this._handleIndexChange}
+                />
+            </View>
+        </View>
+    );
   }
 }
 
 const styles = StyleSheet.create({
-  banner: {
-    flex: 1,
-    backgroundColor: bongzBlue,
-    padding: 15,
-  },
-  header: {
-    fontSize: 20,
-    paddingLeft: 15,
-    color: 'white',
-  },
+    banner: {
+        flex:1,
+        justifyContent: 'center',
+        backgroundColor: bongzBlue,
+        padding: 10,
+        paddingLeft: 15,
+      },
+      header: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        paddingLeft: 15,
+        color: 'white',
+      },
+      container: {
+        flex: 9,
+        justifyContent: 'center',
+        alignContent: 'center'
+      },
+      tab: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: 5,
+      },
+//   banner: {
+//     flex: 1,
+//     backgroundColor: bongzBlue,
+//     padding: 15,
+//   },
+//   header: {
+//     fontSize: 20,
+//     paddingLeft: 15,
+//     color: 'white',
+//   },
+
   h1: {
     color: bongzBlue,
     fontSize: 20,
   },
-  tabs: {
-    flex: 2,
-    flexDirection: 'row',
-  },
+//   tabs: {
+//     flex: 2,
+//     flexDirection: 'row',
+//   },
   activeTab: {
     padding: 15,
     borderBottomWidth: 3,
     borderColor: bongzBlue,
   },
   main: {
-    flex: 2,
+    flex: 1,
     padding: 10,
   },
   table: {

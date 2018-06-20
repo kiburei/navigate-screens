@@ -123,12 +123,14 @@ render() {
 const styles = StyleSheet.create({
   banner: {
     flex:1,
+    justifyContent: 'center',
     backgroundColor: bongzBlue,
     padding: 10,
     paddingLeft: 15,
   },
   header: {
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight: 'bold',
     paddingLeft: 15,
     color: 'white',
   },
@@ -187,7 +189,6 @@ const styles = StyleSheet.create({
       height: 60,
       marginLeft: '90%',
       marginBottom: -20,
-      
   },
   messageLabelText: {
       color: '#fff',
