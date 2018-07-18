@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { View, ScrollView, Text, Button, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
 import { bongzBlue } from '../assets/colors';
 import { Icon } from 'react-native-elements';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
@@ -7,7 +7,7 @@ const {height, width} = Dimensions.get('window');
 
 const FirstRoute = () => {
     return (
-        <View style={styles.main}>
+        <View style={{flex:1}}>
             <Text style={styles.heading}>Your QR Code</Text>
             <View style={{flex: 1, flexDirection: 'row', padding: 15, paddingBottom: 15}}>
                 <View style={{flex: 2}}>
@@ -36,18 +36,20 @@ const FirstRoute = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <Text style={styles.heading}>Bongz ID: 28545855145</Text>
-            <Text style={{padding: 15}}>
-            Your Bongz ID is your unique key. People can use it
-            to send money to you. You can send either your ID or
-            QR code to receive payment
-            </Text>
+            <View style={{flex:1, marginTop: 5}}>
+                <Text style={styles.heading}>Bongz ID: 28545855145</Text>
+                <Text style={{padding: 15}}>
+                Your Bongz ID is your unique key. People can use it
+                to send money to you. You can send either your ID or
+                QR code to receive payment
+                </Text>
+            </View>
         </View>
     )
 }
 const SecondRoute = () => {
     return (
-        <View style={[styles.main], {padding: 15, justifyContent: 'center'}}>
+        <View style={{padding: 15, justifyContent: 'center'}}>
             <View style={{flexDirection: 'row', paddingTop: 20}}>
                 <Text style={{color: bongzBlue, fontSize: 25, fontWeight: 'bold'}}>Your Email Address</Text>
                 <Icon 
@@ -106,7 +108,9 @@ export default class ProfileScreen extends Component {
         return (
             <View style={{ flex: 1}}>
                 <View style={styles.banner}>
-                    <Image source={require('../assets/icons/user.png')}
+                    <Image source={require('../assets/images/background-image.jpeg')} style={styles.backGroundImage} />
+                    <View style={styles.overlay} />
+                    <Image source={require('../assets/images/Group_2x.png')}
                     style={styles.bannerImage}
                     />
                     <Text style={{textAlign: 'center', color: 'white', fontSize: 18}}>John Doe</Text>
@@ -126,12 +130,14 @@ export default class ProfileScreen extends Component {
                     <Text style={{color: bongzBlue}}>Share Your Details</Text>
                     </TouchableOpacity>
                 </View>
-                <TabViewAnimated
-                    navigationState={this.state}
-                    renderScene={this._renderScene}
-                    renderHeader={this._renderHeader}
-                    onIndexChange={this._handleIndexChange}
-                />
+                <View style={styles.main}>
+                    <TabViewAnimated
+                        navigationState={this.state}
+                        renderScene={this._renderScene}
+                        renderHeader={this._renderHeader}
+                        onIndexChange={this._handleIndexChange}
+                    />
+                </View>
             </View>
             
                 
@@ -148,14 +154,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   main: {
-    flex: 4,
+    flex: 2,
   },
   headerBtn: {
     flexDirection: 'row',
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
+    padding: 5,
     borderRadius: 20,
     width: width/2
   },
@@ -179,5 +185,15 @@ const styles = StyleSheet.create({
     borderRadius: 200,
     height: 100,
     width: 100,
+    zIndex: 1,
+  },
+  backGroundImage: {
+    ...StyleSheet.absoluteFillObject,
+    height: height/3,
+    width: width
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(62,195,211,0.5)'
   }
 });
