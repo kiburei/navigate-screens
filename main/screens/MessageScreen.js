@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity, Image, TextInput } from 'react-native';
+import { View, ScrollView, Text, Button, StyleSheet, TouchableOpacity, Image, TextInput } from 'react-native';
 import { bongzBlue } from '../assets/colors';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 
-const FirstRoute = () => <View style={styles.main}>
+const FirstRoute = () => <ScrollView style={styles.main}>
                             <View style={styles.messageView}>
                                 <View style={styles.messageLabel}>
                                     <Text style={styles.messageLabelText}>B</Text>
@@ -37,9 +37,9 @@ const FirstRoute = () => <View style={styles.main}>
                                     ligula sed magna dictum porta.</Text>
                                 </View>
                             </View>    
-                          </View>;
+                          </ScrollView>;
 
-const SecondRoute = () => <View style={styles.main}>
+const SecondRoute = () => <ScrollView style={styles.main}>
                             <View style={{flex: 9}}>
                              <View style={styles.messageView}>
                                 <View style={styles.messageLabel}>
@@ -76,7 +76,7 @@ const SecondRoute = () => <View style={styles.main}>
                                 </View>
                               </View>
                             </View>
-                          </View>;
+                          </ScrollView>;
 
 export default class MessageScreen extends Component {
   state = {
@@ -146,12 +146,14 @@ const styles = StyleSheet.create({
   },
   main: {
     flex: 1,
-    padding: 15,
+    padding: 10,
+    marginBottom: 20,
   },
   messageView: {
     marginLeft: 20,
     marginRight: 15,
-    marginTop: 50,
+    marginTop: 2,
+    marginBottom: 8,
   },
   image: {
       width: 40,
@@ -178,20 +180,23 @@ const styles = StyleSheet.create({
       height: 50,
       marginRight: -10,
       marginBottom: -20,
+      zIndex: 2,
       
   },
    messageLabelImage: {
       backgroundColor: bongzBlue,
       borderRadius: 50,
-      justifyContent: 'flex-end',
-      alignItems: 'flex-end',
+      justifyContent: 'center',
+      alignItems: 'center',
       width: 60,
       height: 60,
-      marginLeft: '90%',
+      marginLeft: '85%',
       marginBottom: -20,
+      zIndex: 1,
   },
   messageLabelText: {
       color: '#fff',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      zIndex: 1,
   }
 });
