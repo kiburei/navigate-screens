@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, ScrollView, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { bongzBlue } from '../assets/colors';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
@@ -33,7 +33,7 @@ const tableData = [
    ['QWESDF234', 'xxxx 2332', '-200', action('QWESDF234 transaction confirmed')],
   ];
 
-const FirstRoute = () => <View style={{flex:1}}>
+const FirstRoute = () => <ScrollView style={{flex:1}}>
                           <View style={styles.main}>
                             <Text>Date: 12/12/2017</Text>
                             <View style={{flex: 1, flexDirection: 'row'}}>
@@ -53,10 +53,10 @@ const FirstRoute = () => <View style={{flex:1}}>
                               <Rows data={tableData} style={styles.row} textStyle={styles.text}/>
                             </Table>
                           </View>
-                        </View>
+                        </ScrollView>
 
 
-const SecondRoute = () => <View style={{flex:1}}>
+const SecondRoute = () => <ScrollView style={{flex:1}}>
                           <View style={styles.main}>
                             <Text>Date: 12/12/2017 - 19/12/2017</Text>
                             <View style={{flex: 1, flexDirection: 'row'}}>
@@ -76,9 +76,9 @@ const SecondRoute = () => <View style={{flex:1}}>
                               <Rows data={tableData} style={styles.row} textStyle={styles.text}/>
                             </Table>
                           </View>
-                        </View>
+                        </ScrollView>
 
-const ThirdRoute = () => <View style={{flex:1}}>
+const ThirdRoute = () => <ScrollView style={{flex:1}}>
                           <View style={styles.main}>
                             <Text>Date: 12/12/2017 - 11/01/2018</Text>
                             <View style={{flex: 1, flexDirection: 'row'}}>
@@ -98,7 +98,7 @@ const ThirdRoute = () => <View style={{flex:1}}>
                               <Rows data={tableData} style={styles.row} textStyle={styles.text}/>
                             </Table>
                           </View>
-                        </View>
+                        </ScrollView>
 
 
 export default class StatementScreen extends Component {
@@ -202,12 +202,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   head: {
+    marginTop: 15,
     height: 40,
   },
   textHeader: {
     color: bongzBlue,
-    marginLeft: 5,
     fontSize: 10,
+    fontWeight: 'bold',
     textAlign: 'center',
   },
   text: {
