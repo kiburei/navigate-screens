@@ -51,7 +51,7 @@ const MainTabs = TabNavigator({
         Home: { 
             screen: RootStack,
             navigationOptions: {
-                tabBarLabel: 'Home',
+                tabBarLabel: 'Transact',
                 tabBarIcon: ({focused}) => 
                 <Icon 
                     type='ionicon' 
