@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Alert, Picker } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Alert, Picker } from 'react-native';
 import { bongzBlue } from './assets/colors';
 import { Dropdown } from 'react-native-material-dropdown';
 import { Icon } from 'react-native-elements';
@@ -37,59 +37,61 @@ export default class ShopNo extends Component {
         <View style={styles.banner}>
           <Text style={styles.bannerText}>Pay using Shop No.</Text>
         </View>
-        <View style={styles.shopId}>
-          <View style={{flex: 1}}>
-            <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
-             style={styles.image} />
-          </View>
-          <View style={{flex: 2}}>
-            <Text style={styles.header}>Taj Cape Town</Text>
-            <Text style={styles.headerSmall}>Bonz ID: <Text style={styles.details}>985658456</Text></Text>
-            <Text style={styles.headerSmall}>Location: <Text style={styles.details}>Cape Town, SA</Text></Text>
-            <Text style={styles.headerSmall}>Contacts: <Text style={styles.details}>+27 21 578 2545</Text></Text>
-          </View>
-        </View>
-        <KeyboardAvoidingView style={styles.form}>
-          <Text style={styles.header}>Frequently Paid</Text>
-          <View style={{flexDirection: 'row', width: '100%', borderWidth: 2, borderColor: 'lightgray'}}>
-            <Picker
-                selectedValue={this.state.language}
-                style={{ height: 50,  width: '90%', borderColor: 'lightgray'}}
-                onValueChange={(itemValue, itemIndex) => this.setState({store: itemValue})}>
-                <Picker.Item label="Kwa Zulu Natal" value="Kwa Zulu Natal" />
-                <Picker.Item label="Malema Stores" value="Malema Stores" />
-                <Picker.Item label="Xhobuku" value="Xhobuku" />
-            </Picker>
-            <Icon 
-                type='ionicon' 
-                name='ios-search' 
-                color='#fff' 
-                containerStyle={{
-                    width: '10%', 
-                    backgroundColor: 'grey', 
-                    justifyContent: 'center', 
-                    alignItems: 'center'
-                }}
-            />
-          </View>  
-          <Text style={styles.header}>Enter Shop Number</Text>
-          <View style={styles.textInputView}>
-            <TextInput
-                keyboardType='numeric'
-                underlineColorAndroid='transparent'
-            />
-          </View>
-          <Text style={styles.header}>Enter Amount</Text>
-          <View style={styles.textInputView}>
-            <TextInput
-                keyboardType='numeric'
-                underlineColorAndroid='transparent'
-            />
-          </View>  
-          <TouchableOpacity style={styles.button} onPress={() => this.confirmPayment()}>
-            <Text style={{color: 'white', fontWeight: 'bold'}}>Pay Now</Text>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
+        <ScrollView>
+            <View style={styles.shopId}>
+            <View style={{flex: 1}}>
+                <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+                style={styles.image} />
+            </View>
+            <View style={{flex: 2}}>
+                <Text style={styles.header}>Taj Cape Town</Text>
+                <Text style={styles.headerSmall}>Bonz ID: <Text style={styles.details}>985658456</Text></Text>
+                <Text style={styles.headerSmall}>Location: <Text style={styles.details}>Cape Town, SA</Text></Text>
+                <Text style={styles.headerSmall}>Contacts: <Text style={styles.details}>+27 21 578 2545</Text></Text>
+            </View>
+            </View>
+            <KeyboardAvoidingView style={styles.form}>
+            <Text style={styles.header}>Frequently Paid</Text>
+            <View style={{flexDirection: 'row', width: '100%', borderWidth: 2, borderColor: 'lightgray'}}>
+                <Picker
+                    selectedValue={this.state.language}
+                    style={{ height: 50,  width: '90%', borderColor: 'lightgray'}}
+                    onValueChange={(itemValue, itemIndex) => this.setState({store: itemValue})}>
+                    <Picker.Item label="Kwa Zulu Natal" value="Kwa Zulu Natal" />
+                    <Picker.Item label="Malema Stores" value="Malema Stores" />
+                    <Picker.Item label="Xhobuku" value="Xhobuku" />
+                </Picker>
+                <Icon 
+                    type='ionicon' 
+                    name='ios-search' 
+                    color='#fff' 
+                    containerStyle={{
+                        width: '10%', 
+                        backgroundColor: 'grey', 
+                        justifyContent: 'center', 
+                        alignItems: 'center'
+                    }}
+                />
+            </View>  
+            <Text style={styles.header}>Enter Shop Number</Text>
+            <View style={styles.textInputView}>
+                <TextInput
+                    keyboardType='numeric'
+                    underlineColorAndroid='transparent'
+                />
+            </View>
+            <Text style={styles.header}>Enter Amount</Text>
+            <View style={styles.textInputView}>
+                <TextInput
+                    keyboardType='numeric'
+                    underlineColorAndroid='transparent'
+                />
+            </View>  
+            <TouchableOpacity style={styles.button} onPress={() => this.confirmPayment()}>
+                <Text style={{color: 'white', fontWeight: 'bold'}}>Pay Now</Text>
+            </TouchableOpacity>
+            </KeyboardAvoidingView>
+        </ScrollView>    
       </View>
     );
   }
@@ -114,8 +116,9 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   form: {
-    flex:1,  
-    padding: 20
+    flex: 3,  
+    paddingVertical: 5,
+    paddingHorizontal: 10
   },
   image: {
     // borderStyle: 'solid',
@@ -136,8 +139,8 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   textInputView: {
-      borderWidth: 2, 
-      borderColor: 'lightgray'
+    borderWidth: 2, 
+    borderColor: 'lightgray'
   },
   button: {
     marginTop: 10,

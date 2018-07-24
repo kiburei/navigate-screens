@@ -46,19 +46,21 @@ const RootStack = StackNavigator({
   },
 });
 
+// tabBarIcon: (({focused}) => {
+//     focused ? 
+//     <Image source={require('../assets/icons/new/transact-active.png')} style={{width:20, height: 20}} />
+//     : <Image source={require('../assets/icons/new/transact.png')} style={{width:20, height: 20}} />;
+// })
 
 const MainTabs = TabNavigator({
         Home: { 
             screen: RootStack,
             navigationOptions: {
                 tabBarLabel: 'Transact',
-                tabBarIcon: ({focused}) => 
-                <Icon 
-                    type='ionicon' 
-                    name={focused ? 'ios-home' : 'ios-home-outline'} 
-                    size={30} 
-                    color={focused ? bongzBlue : 'gray'}
-                />,
+                tabBarIcon: (({focused}) => {
+                    return focused ? <Image source={require('../assets/icons/new/transact-active.png')} style={{width:20, height: 20}} />
+                    : <Image source={require('../assets/icons/new/transact.png')} style={{width:20, height: 20}} /> ;
+                })
             },
         },
         Messages: { 

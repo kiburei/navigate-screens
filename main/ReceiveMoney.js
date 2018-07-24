@@ -28,15 +28,15 @@ export default class ReceiveMoney extends Component {
           </View>
         </View>
         <View style={styles.main}>
-          <Text style={styles.header}>Your QR Code</Text>
+            <Text style={styles.header}>Your QR Code</Text>
             <View style={styles.qrCode}>
               <View style={{flex: 1}}>
                 <Image source={require('./assets/icons/qr.png')}
                   style={styles.image}
                   />
               </View>
-              <View style={{flex: 2}}>
-                <Text style={{paddingTop: 10}}>
+              <View style={{flex: 2, overflow: 'hidden'}}>
+                <Text>
                   let others scan this QR code to
                   receive payment from then. Share
                   to send your detials to others
@@ -47,7 +47,7 @@ export default class ReceiveMoney extends Component {
                         name='share' 
                         color='#fff' 
                         containerStyle={{
-                            padding: 20,
+                            padding: 5,
                         }}
                     />
                   <Text style={{color: 'white', fontWeight: 'bold'}}>Expand</Text>
@@ -55,7 +55,7 @@ export default class ReceiveMoney extends Component {
 
               </View>
             </View>
-            <View style={{flex: 2, padding: 10}}>
+            <View style={{flex: 2}}>
               <Text style={styles.header}>Bongz ID: 284585465</Text>
               <Text style={{paddingLeft: 20}}>
                 Your Bongz ID is your unique key. People can use it
@@ -69,10 +69,10 @@ export default class ReceiveMoney extends Component {
                             color='#fff' 
                             containerStyle={{
                                 width: '30%',
-                                padding: 15
+                                padding: 10
                             }}
                         />
-                    <Text style={{color: 'white', fontWeight: 'bold'}}>Share Your Details</Text>
+                    <Text style={{color: 'white', fontWeight: 'bold',padding: 5}}>Share Your Details</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -83,7 +83,7 @@ export default class ReceiveMoney extends Component {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 8,
+    flex: 7,
   },
   banner: {
     flex: 1,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     width: 70,
   },
   header: {
-    paddingTop: 30,
+    paddingTop: 10,
     paddingLeft: 20,
     fontSize: 20,
     color: bongzBlue,
@@ -131,7 +131,11 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    width: width/3
+    alignContent: 'center',
+    width: width/3,
+    height: width/3 * 0.4,
+    marginTop: 4,
+    padding:5,
   },
   buttonBig: {
     flexDirection: 'row',
@@ -142,18 +146,18 @@ const styles = StyleSheet.create({
     width: width/2,
     marginRight: width/4,
     marginLeft: width/4,
-    marginTop: 15,
-    padding: 10
+    marginTop: 10,
+    padding: 5
   },
   profileBanner: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     padding: 15,
     overflow: 'hidden'
   },
   backGroundImage: {
     ...StyleSheet.absoluteFillObject,
-    height: 115,
+    height: 120,
     width: width
   },
   overlay: {

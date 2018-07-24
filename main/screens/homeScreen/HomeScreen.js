@@ -68,7 +68,10 @@ export default class HomeScreen extends Component {
 }
 
 const items = [
-  { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code', link: 'QrCode', i: 1 },{ name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number', link: 'ShopNo', i: 2 },
-  { name: 'Withdraw from Agent', info: 'Withdraw some money from a Bongz Agent', link: 'AgentWithdraw', i: 3 },{ name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw', i: 4 },
-  { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user', link: 'SendMoney', i: 5 },{ name: 'Request Payment', info: 'Send QR code or number & request payment', link: 'ReceiveMoney', i: 6 },
+  { name: 'Pay using QR Code', info: 'Pay for goods and services by scanning a QR code', link: 'QrCode', i: 1 },
+  { name: 'Pay using Shop No.', info: 'Pay for goods & services by entering shop number', link: 'ShopNo', i: 2 },
+  { name: 'Withdraw from Agent', info: 'Withdraw some money from a Bongz Agent', link: 'AgentWithdraw', i: 3 },
+  { name: 'Withdraw from ATM', info: 'Withdraw money from ATM', link: 'AtmWithdraw', i: 4 },
+  { name: 'Send Money to Others', info: 'Send money instantly to other Bongz user', link: 'SendMoney', i: 5 },
+  { name: 'Request Payment', info: 'Send QR code or number & request payment', link: 'ReceiveMoney', i: 6 },
 ];

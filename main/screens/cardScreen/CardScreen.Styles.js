@@ -15,6 +15,7 @@ export default StyleSheet.create({
     header: {
       flex: 3, 
       fontSize: 20,
+      fontWeight: 'bold',
       paddingLeft: 15,
       color: 'white',
     },
