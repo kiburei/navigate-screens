@@ -46,11 +46,6 @@ const RootStack = StackNavigator({
   },
 });
 
-// tabBarIcon: (({focused}) => {
-//     focused ? 
-//     <Image source={require('../assets/icons/new/transact-active.png')} style={{width:20, height: 20}} />
-//     : <Image source={require('../assets/icons/new/transact.png')} style={{width:20, height: 20}} />;
-// })
 
 const MainTabs = TabNavigator({
         Home: { 
