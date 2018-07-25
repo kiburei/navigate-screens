@@ -58,8 +58,8 @@ const MainTabs = TabNavigator({
             navigationOptions: {
                 tabBarLabel: 'Transact',
                 tabBarIcon: (({focused}) => {
-                    return focused ? <Image source={require('../assets/icons/new/transact-active.png')} style={{width:20, height: 20}} />
-                    : <Image source={require('../assets/icons/new/transact.png')} style={{width:20, height: 20}} /> ;
+                    return focused ? <Image source={require('../assets/icons/new/ic_transact_active.png')} style={{width:20, height: 20}} />
+                    : <Image source={require('../assets/icons/new/ic_transact.png')} style={{width:20, height: 20}} /> ;
                 })
             },
         },
@@ -67,52 +67,41 @@ const MainTabs = TabNavigator({
             screen: MessageScreen,
             navigationOptions: {
                 tabBarLabel: 'Messages',
-                tabBarIcon: ({focused}) => 
-                <Icon 
-                    type='material-community' 
-                    name={focused ? 'message-text' : 'message-text-outline'} 
-                    size={30} 
-                    color={focused ? bongzBlue : 'gray'}
-                />,
+                tabBarIcon: ({focused}) => {
+                    return focused ? <Image source={require('../assets/icons/new/ic_message_active.png')} style={{width:20, height: 20}} />
+                    : <Image source={require('../assets/icons/new/ic_message.png')} style={{width:20, height: 20}} /> ;
+                },
             },
         }, 
         Cards: { 
             screen: CardScreen,
             navigationOptions: {
                 tabBarLabel: 'Cards',
-                tabBarIcon: ({focused}) => 
-                <Icon 
-                    type='ionicon' 
-                    name={focused ? 'ios-card' : 'ios-card-outline'} 
-                    size={30} 
-                    color={focused ? bongzBlue : 'gray'}
-                />,
+                tabBarIcon: ({focused}) => {
+                    return focused ? <Image source={require('../assets/icons/new/ic_credit_card_active.png')} style={{width:20, height: 20}} />
+                    : <Image source={require('../assets/icons/new/ic_credit_card.png')} style={{width:20, height: 20}} /> ;
+                }
+                
             },
         }, 
         Statements: { 
             screen: StatementScreen,
             navigationOptions: {
                 tabBarLabel: 'Statements',
-                tabBarIcon: ({focused}) => 
-                <Icon 
-                    type='ionicon' 
-                    name={focused ? 'ios-paper' : 'ios-paper-outline'} 
-                    size={30} 
-                    color={focused ? bongzBlue : 'gray'}
-                />,
+                tabBarIcon: ({focused}) => {
+                    return focused ? <Image source={require('../assets/icons/new/ic_statement_active.png')} style={{width:20, height: 20}} />
+                    : <Image source={require('../assets/icons/new/ic_statement.png')} style={{width:20, height: 20}} /> ;
+                },
             },
         }, 
         Profile: { 
             screen: ProfileScreen,
             navigationOptions: {
                 tabBarLabel: 'Profile',
-                tabBarIcon: ({focused}) => 
-                <Icon 
-                    type='ionicon' 
-                    name={focused ? 'ios-person' : 'ios-person-outline'} 
-                    size={30} 
-                    color={focused ? bongzBlue : 'gray'}
-                />,
+                tabBarIcon: ({focused}) => {
+                    return focused ? <Image source={require('../assets/icons/new/ic_profile_active.png')} style={{width:20, height: 20}} />
+                    : <Image source={require('../assets/icons/new/ic_profile.png')} style={{width:20, height: 20}} /> ;
+                },
             },
         }, 
     },
