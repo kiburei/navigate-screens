@@ -27,6 +27,17 @@ export default class AtmWithdraw extends Component {
     return (
       <View style={{flex: 1}}>
         <View style={styles.banner}>
+            <Icon 
+                type='font-awesome' 
+                name='chevron-left' 
+                color='#fff'
+                containerStyle={{
+                    justifyContent: 'center', 
+                    alignItems: 'center',
+                    marginLeft: 5,
+                }}
+                onPress={() => this.props.navigation.navigate('Main')}
+            />
           <Text style={styles.bannerText}>Withdraw From ATM</Text>
         </View>
         <Text style={{padding: 20, textAlign: 'center', fontWeight: 'bold', color: 'grey'}}>
@@ -84,6 +95,8 @@ export default class AtmWithdraw extends Component {
 const styles = StyleSheet.create({
   banner: {
     flex: 1,
+    flexDirection: 'row',
+    alignContent: 'center',
     padding: 15,
     backgroundColor: bongzBlue,
   },

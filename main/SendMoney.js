@@ -17,7 +17,18 @@ export default class SendMoney extends Component {
     return (
       <View style={{flex:1}}>
         <View style={styles.banner}>
-          <Text style={styles.bannerText}>Send Money</Text>
+            <Icon 
+                type='font-awesome' 
+                name='chevron-left' 
+                color='#fff'
+                containerStyle={{
+                    justifyContent: 'center', 
+                    alignItems: 'center',
+                    marginLeft: 5,
+                }}
+                onPress={() => this.props.navigation.navigate('Main')}
+            />
+            <Text style={styles.bannerText}>Send Money</Text>
         </View>
         <KeyboardAvoidingView style={styles.form}>
             <Text style={styles.header}>Frequently used Agents</Text>
@@ -80,7 +91,9 @@ export default class SendMoney extends Component {
 
 const styles = StyleSheet.create({
   banner: {
-    flex:1,
+    flex: 1,
+    flexDirection: 'row',
+    alignContent: 'center',
     padding: 15,
     backgroundColor: bongzBlue,
   },

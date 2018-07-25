@@ -23,6 +23,17 @@ export default class AgentWithdraw extends Component {
     return (
         <View style={{flex: 1}}>
             <View style={styles.banner}>
+                <Icon 
+                    type='font-awesome' 
+                    name='chevron-left' 
+                    color='#fff'
+                    containerStyle={{
+                        justifyContent: 'center', 
+                        alignItems: 'center',
+                        marginLeft: 5,
+                    }}
+                    onPress={() => this.props.navigation.navigate('Main')}
+                />
                 <Text style={styles.bannerText}>Withdraw From Agent</Text>
             </View>
             <KeyboardAvoidingView style={styles.form}>
@@ -74,6 +85,8 @@ export default class AgentWithdraw extends Component {
 const styles = StyleSheet.create({
   banner: {
     flex: 1,
+    flexDirection: 'row',
+    alignContent: 'center',
     padding: 15,
     backgroundColor: bongzBlue,
   },
