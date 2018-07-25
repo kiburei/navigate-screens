@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 9,
     justifyContent: 'center',
-    alignContent: 'center'
+    alignContent: 'center',
   },
   tab: {
     justifyContent: 'center',
@@ -146,8 +146,8 @@ const styles = StyleSheet.create({
   },
   main: {
     flex: 1,
-    padding: 10,
-    marginBottom: 20,
+    padding: 20,
+    marginBottom: 10,
   },
   messageView: {
     marginLeft: 20,

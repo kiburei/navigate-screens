@@ -14,7 +14,7 @@ export default StyleSheet.create({
     },
     header: {
       flex: 3, 
-      fontSize: 20,
+      fontSize: 25,
       fontWeight: 'bold',
       paddingLeft: 15,
       color: 'white',
@@ -24,6 +24,7 @@ export default StyleSheet.create({
     },
     main: {
       flex: 15,
+      padding: 10,
     },
     wallet: {
       flex: 1,

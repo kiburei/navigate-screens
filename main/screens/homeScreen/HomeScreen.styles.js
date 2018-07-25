@@ -41,7 +41,7 @@ export default StyleSheet.create({
     },
     actions: {
       padding: 5,
-      borderRadius: 15,
+      borderRadius: 10,
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
